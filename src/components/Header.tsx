@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,8 +26,10 @@ const Header = () => {
                   onMouseEnter={() => setIsServicesOpen(true)}
                   onMouseLeave={() => setIsServicesOpen(false)}
                 >
-                  <span>Services</span>
-                  <ChevronDown className="w-4 h-4" />
+                  <Link to="/services" className="flex items-center space-x-1">
+                    <span>Services</span>
+                    <ChevronDown className="w-4 h-4" />
+                  </Link>
                 </button>
                 {isServicesOpen && (
                   <div 
@@ -49,6 +52,9 @@ const Header = () => {
                   </div>
                 )}
               </div>
+              <Link to="/ourStory" className="text-gray-700 hover:text-primary transition-colors font-medium">
+                Our Story
+              </Link>
               <a href="#" className="text-gray-700 hover:text-primary transition-colors font-medium">
                 Resources
               </a>
@@ -92,8 +98,10 @@ const Header = () => {
                     className="flex items-center justify-between w-full text-gray-700 hover:text-primary transition-colors font-medium"
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
                   >
-                    <span>Services</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                    <Link to="/services" className="flex items-center justify-between w-full">
+                      <span>Services</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                    </Link>
                   </button>
                   {isServicesOpen && (
                     <div className="mt-2 ml-4 space-y-2">
@@ -112,6 +120,9 @@ const Header = () => {
                     </div>
                   )}
                 </div>
+                <Link to="/ourStory" className="block text-gray-700 hover:text-primary transition-colors font-medium">
+                  Our Story
+                </Link>
                 <a href="#" className="block text-gray-700 hover:text-primary transition-colors font-medium">
                   Resources
                 </a>
