@@ -128,26 +128,26 @@ const Services = () => {
       <section className="py-16 bg-hero-bg text-hero-foreground">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-hero-foreground">
               Our Core Services
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {coreServices.map((service, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/20 rounded-lg text-primary mb-4">
+              <div key={index} className="bg-card/10 backdrop-blur-sm rounded-lg p-6 border border-card/20 flex flex-col h-full">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/20 rounded-lg text-primary mb-4 flex-shrink-0">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-3">
+                <h3 className="text-xl font-semibold mb-3 text-hero-foreground">
                   {service.title}
                 </h3>
-                <p className="text-hero-foreground/80 mb-6 text-sm leading-relaxed">
+                <p className="text-hero-foreground/80 mb-6 text-sm leading-relaxed flex-grow">
                   {service.description}
                 </p>
                 <Button 
                   variant="outline" 
-                  className="w-full bg-primary/10 border-primary/30 text-primary hover:bg-primary/20"
+                  className="w-full bg-primary/10 border-primary/30 text-primary hover:bg-primary/20 mt-auto"
                 >
                   {service.buttonText}
                 </Button>
