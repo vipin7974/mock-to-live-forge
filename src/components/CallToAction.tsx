@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import wellnessImage from "@/assets/wellness-journey.jpg";
 
 const CallToAction = () => {
+  const ctaRef = useScrollAnimation('animate-fade-in');
+
   return (
     <section 
       className="relative py-20 px-6 bg-cover bg-center bg-no-repeat"
@@ -9,7 +12,7 @@ const CallToAction = () => {
     >
       <div className="absolute inset-0 bg-hero/80"></div>
       <div className="container mx-auto relative z-10">
-        <div className="text-center text-hero-foreground">
+        <div ref={ctaRef} className="text-center text-hero-foreground">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
             Ready to Start<br />
             Your Wellness Journey?

@@ -2,18 +2,23 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 const ContactSection = () => {
+  const titleRef = useScrollAnimation('animate-fade-in');
+  const contentRef = useScrollAnimation('animate-fade-in', 0.1, '0px 0px -30px 0px');
+
   return (
     <section className="bg-hero py-20 px-6">
       <div className="container mx-auto">
-        <div className="text-center text-hero-foreground mb-16">
+        <div ref={titleRef} className="text-center text-hero-foreground mb-16">
           <h2 className="text-4xl font-bold mb-4">Ready to Start Your Journey?</h2>
           <p className="text-xl text-hero-foreground/80 max-w-2xl mx-auto">
             Take the first step towards improved wellness. Reach out to us for support or schedule your consultation today.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div ref={contentRef} className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="text-hero-foreground">
             <h3 className="text-2xl font-bold mb-6">Get Confidential Support</h3>
             <div className="space-y-6">

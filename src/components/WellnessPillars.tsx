@@ -1,3 +1,5 @@
+import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+
 const WellnessPillars = () => {
   const pillars = [
     {
@@ -30,17 +32,20 @@ const WellnessPillars = () => {
     }
   ];
 
+  const titleRef = useScrollAnimation('animate-fade-in');
+  const pillarsRef = useStaggeredAnimation(150, 'animate-fade-in');
+
   return (
     <section className="bg-wellness py-20 px-6">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
+        <div ref={titleRef} className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 text-wellness-foreground">Our Wellness Pillars</h2>
           <p className="text-xl text-wellness-foreground/70 max-w-3xl mx-auto">
             We help Indian men discover their best selves through holistic wellness approaches that address every aspect of modern life.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div ref={pillarsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {pillars.map((pillar, index) => (
             <div key={index} className="bg-background rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
               <div className="text-center">

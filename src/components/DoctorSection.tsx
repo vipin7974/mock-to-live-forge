@@ -1,10 +1,13 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import doctorImage from "@/assets/doctor-portrait.jpg";
 
 const DoctorSection = () => {
+  const sectionRef = useScrollAnimation('animate-fade-in');
+
   return (
     <section className="bg-hero py-20 px-6">
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+        <div ref={sectionRef} className="flex flex-col lg:flex-row items-center gap-12">
           <div className="flex-1">
             <img 
               src={doctorImage} 

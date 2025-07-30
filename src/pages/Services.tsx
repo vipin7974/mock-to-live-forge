@@ -2,10 +2,19 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Heart, Activity, Zap, User, CheckCircle } from "lucide-react";
+import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
 import heroImage from "@/assets/hero-man-laptop.jpg";
 import doctorImage from "@/assets/doctor-portrait.jpg";
 
 const Services = () => {
+  const heroRef = useScrollAnimation('animate-fade-in');
+  const pillarsHeaderRef = useScrollAnimation('animate-fade-in');
+  const pillarsGridRef = useStaggeredAnimation(100, 'animate-fade-in');
+  const servicesHeaderRef = useScrollAnimation('animate-fade-in');
+  const servicesGridRef = useStaggeredAnimation(150, 'animate-fade-in');
+  const differentiatorRef = useScrollAnimation('animate-fade-in');
+  const finalSectionRef = useScrollAnimation('animate-fade-in');
+
   const pillars = [
     {
       icon: <Heart className="w-8 h-8" />,
@@ -72,7 +81,7 @@ const Services = () => {
       <section className="relative bg-gradient-to-br from-hero-bg to-hero-bg/90 text-hero-foreground pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div ref={heroRef} className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               Comprehensive Wellness
               <br />
@@ -97,7 +106,7 @@ const Services = () => {
       {/* 4-Pillar Approach */}
       <section className="py-16 bg-wellness-bg">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
+          <div ref={pillarsHeaderRef} className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-wellness-foreground mb-4">
               Our Methodology: The 4-Pillar Approach
             </h2>
@@ -106,7 +115,7 @@ const Services = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div ref={pillarsGridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {pillars.map((pillar, index) => (
               <div key={index} className="text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full text-primary mb-4">
@@ -127,13 +136,13 @@ const Services = () => {
       {/* Core Services */}
       <section className="py-16 bg-hero-bg text-hero-foreground">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
+          <div ref={servicesHeaderRef} className="max-w-4xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-hero-foreground">
               Our Core Services
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div ref={servicesGridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {coreServices.map((service, index) => (
               <div key={index} className="bg-card/10 backdrop-blur-sm rounded-lg p-6 border border-card/20 flex flex-col h-full">
                 <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/20 rounded-lg text-primary mb-4 flex-shrink-0">
@@ -160,7 +169,7 @@ const Services = () => {
       {/* What Makes Us Different */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div ref={differentiatorRef} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 What Makes Us Different
@@ -198,7 +207,7 @@ const Services = () => {
           }}
         ></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-2xl">
+          <div ref={finalSectionRef} className="max-w-2xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Getting Started
             </h2>

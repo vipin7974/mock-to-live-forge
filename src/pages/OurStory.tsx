@@ -1,8 +1,16 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const OurStory = () => {
+  const heroRef = useScrollAnimation('animate-fade-in');
+  const section1Ref = useScrollAnimation('animate-fade-in');
+  const section2Ref = useScrollAnimation('animate-fade-in');
+  const section3Ref = useScrollAnimation('animate-fade-in');
+  const section4Ref = useScrollAnimation('animate-fade-in');
+  const finalRef = useScrollAnimation('animate-fade-in');
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -10,7 +18,7 @@ const OurStory = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/20 to-secondary/20 px-6">
         <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center pt-20">
-          <div className="space-y-6">
+          <div ref={heroRef} className="space-y-6">
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
               Breaking the Silence,<br />
               <span className="text-primary">Building the Courage</span>
@@ -30,7 +38,7 @@ const OurStory = () => {
       {/* The Silent Crisis */}
       <section className="py-20 px-6 bg-background">
         <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
+          <div ref={section1Ref} className="space-y-6">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
               The Silent Crisis
             </h2>
@@ -54,7 +62,7 @@ const OurStory = () => {
               <div className="text-5xl">🎯</div>
             </div>
           </div>
-          <div className="space-y-6 order-1 lg:order-2">
+          <div ref={section2Ref} className="space-y-6 order-1 lg:order-2">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
               Our Mission
             </h2>
@@ -68,7 +76,7 @@ const OurStory = () => {
       {/* Why "Be Ballsy"? */}
       <section className="py-20 px-6 bg-background">
         <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
+          <div ref={section3Ref} className="space-y-6">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
               Why "Be Ballsy"?
             </h2>
@@ -92,7 +100,7 @@ const OurStory = () => {
               <div className="text-5xl">👥</div>
             </div>
           </div>
-          <div className="space-y-6 order-1 lg:order-2">
+          <div ref={section4Ref} className="space-y-6 order-1 lg:order-2">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
               Our Vision
             </h2>
@@ -106,7 +114,7 @@ const OurStory = () => {
       {/* The Journey Ahead */}
       <section className="py-20 px-6 bg-gradient-to-br from-primary/10 to-secondary/10">
         <div className="container mx-auto text-center space-y-8">
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div ref={finalRef} className="max-w-4xl mx-auto space-y-6">
             <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
               The Journey Ahead
             </h2>

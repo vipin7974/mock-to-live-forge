@@ -3,6 +3,8 @@ import therapyImage from "@/assets/therapy-session.jpg";
 import fitnessImage from "@/assets/fitness-plan.jpg";
 import assessmentImage from "@/assets/virtual-assessment.jpg";
 
+import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/useScrollAnimation";
+
 const FeaturedSolutions = () => {
   const solutions = [
     {
@@ -49,17 +51,20 @@ const FeaturedSolutions = () => {
     }
   ];
 
+  const titleRef = useScrollAnimation('animate-fade-in');
+  const solutionsRef = useStaggeredAnimation(100, 'animate-fade-in');
+
   return (
     <section className="bg-background py-20 px-6">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
+        <div ref={titleRef} className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Featured Solutions</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Explore our most impactful programs and services designed to help modern men thrive in every aspect of life.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={solutionsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {solutions.map((solution, index) => (
             <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <img 

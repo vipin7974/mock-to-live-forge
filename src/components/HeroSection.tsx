@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import heroImage from "@/assets/hero_img.png"; // Ensure this is the smiling man image
 
 const HeroSection = () => {
+  const heroContentRef = useScrollAnimation('animate-fade-in');
+
   return (
     <section
       className="relative min-h-screen bg-cover bg-center bg-no-repeat text-white"
@@ -13,7 +16,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 px-6 py-24 lg:py-32">
         <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
-          <div className="flex-1 text-center lg:text-left space-y-8">
+          <div ref={heroContentRef} className="flex-1 text-center lg:text-left space-y-8">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               India's Most Trusted
               <br />
