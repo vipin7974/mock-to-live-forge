@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Heart, Activity, Zap, User, CheckCircle } from "lucide-react";
+import heroImage from "@/assets/hero-man-laptop.jpg";
+import doctorImage from "@/assets/doctor-portrait.jpg";
 
 const Services = () => {
   const pillars = [
@@ -86,7 +88,7 @@ const Services = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/lovable-uploads/6635e4f0-e480-4c9a-b96a-6dbdcc0277c8.png')`,
+            backgroundImage: `url(${heroImage})`,
             backgroundPosition: 'center right'
           }}
         ></div>
@@ -175,7 +177,7 @@ const Services = () => {
             <div className="relative">
               <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl overflow-hidden">
                 <img 
-                  src="/lovable-uploads/6635e4f0-e480-4c9a-b96a-6dbdcc0277c8.png"
+                  src={doctorImage}
                   alt="What makes us different"
                   className="w-full h-full object-cover"
                 />
@@ -191,7 +193,7 @@ const Services = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/lovable-uploads/6635e4f0-e480-4c9a-b96a-6dbdcc0277c8.png')`,
+            backgroundImage: `url(${heroImage})`,
             backgroundPosition: 'center right'
           }}
         ></div>
