@@ -33,11 +33,11 @@ const ReachOut = () => {
               </p>
             </div>
             <div className="flex justify-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
                 <img 
-                  src="/lovable-uploads/01810712-5a05-465f-bb44-880cdceb9990.png" 
+                  src="/lovable-uploads/0812f20c-fba7-424a-9cee-3aa79cf852f9.png" 
                   alt="Happy man on phone" 
-                  className="w-full h-auto rounded-xl"
+                  className="w-full h-auto rounded-xl max-w-sm"
                 />
               </div>
             </div>
