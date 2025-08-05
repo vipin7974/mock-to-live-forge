@@ -9,6 +9,7 @@ import Services from "./pages/Services";
 import Resources from "./pages/Resources";
 import ReachOut from "./pages/ReachOut";
 import MentalWellness from "./pages/MentalWellness";
+import PhysicalWellness from "./pages/PhysicalWellness";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/resources" element={<Resources />} />
           <Route path="/reachOut" element={<ReachOut />} />
           <Route path="/mentalWellness" element={<MentalWellness />} />
+          <Route path="/physicalWellness" element={<PhysicalWellness />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
