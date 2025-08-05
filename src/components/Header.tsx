@@ -13,8 +13,10 @@ const Header = () => {
         <div className="bg-white/95 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-white/20">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="text-2xl font-bold text-gray-900">Be Ballsy</div>
-            
+            <Link to="/" className="text-gray-900 hover:text-primary transition-colors text-2xl font-bold">
+            Be Ballsy
+            </Link>
+           
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               <a href="#" className="text-gray-700 hover:text-primary transition-colors font-medium">

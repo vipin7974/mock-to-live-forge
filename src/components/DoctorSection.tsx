@@ -1,46 +1,70 @@
+"use client";
+
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import doctorImage from "@/assets/doctor-portrait.jpg";
+import TealGlow from "./ui/tealglow";
 
 const DoctorSection = () => {
-  const sectionRef = useScrollAnimation('animate-fade-in');
+  const sectionRef = useScrollAnimation("animate-fade-in");
 
   return (
-    <section className="bg-hero py-20 px-6">
-      <div className="container mx-auto">
-        <div ref={sectionRef} className="flex flex-col lg:flex-row items-center gap-12">
+    <TealGlow className="bg-[#0F1E1A] py-20 px-4 md:px-8 lg:px-0">
+      <div className="max-w-7xl mx-auto">
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            Lorem ipsum in arcu
+          </h2>
+          <p className="text-white/80 mt-4 max-w-2xl mx-auto">
+            Lorem ipsum dolor sit amet consectetur. Massa imperdiet in orci ante tristique
+            sollicitudin rhoncus eget facilisi. Ac leo tristique sed lectus. Adipiscing tortor ut
+            odio enim eget.
+          </p>
+        </div>
+
+        {/* Content */}
+        <div ref={sectionRef} className="flex flex-col lg:flex-row bg-[#101C1A] rounded-[40px] overflow-hidden shadow-xl">
+          {/* Left - Image */}
           <div className="flex-1">
-            <img 
-              src={doctorImage} 
-              alt="Healthcare professional" 
-              className="w-full h-auto rounded-lg shadow-2xl"
+            <img
+              src={doctorImage}
+              alt="Doctor"
+              className="w-full h-full object-cover"
             />
           </div>
-          <div className="flex-1">
-            <div className="bg-primary/10 backdrop-blur-sm rounded-lg p-8">
-              <div className="flex items-center mb-4">
-                <div className="text-primary font-bold text-lg">Be Ballsy</div>
-              </div>
-              <h2 className="text-3xl font-bold mb-4 text-hero-foreground">
-                Expert Care from Certified Professionals
-              </h2>
-              <p className="text-hero-foreground/80 mb-6 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dignissim 
-                mi sed lorem interdum fermentum. Nullam rutrum ipsum sit amet mi 
-                pellentesque, quis tempor elit ullamcorper.
+
+          {/* Right - Text content */}
+          <div className="flex-1 px-6 py-10 md:p-12 lg:p-16 bg-gradient-to-br from-white/5 to-white/0 flex flex-col justify-between">
+            <div>
+              <p className="text-[#5EEAD4] font-semibold mb-2">
+                Be <span className="font-bold">Ballsy</span>
               </p>
-              <div className="flex space-x-4">
-                <button className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
-                  ▶
-                </button>
-                <button className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-white">
-                  ⏸
-                </button>
-              </div>
+              <h3 className="text-3xl font-bold text-[#5EEAD4] mb-2">
+                Lorem ipsum odio
+              </h3>
+              <h4 className="italic text-white text-lg mb-6">
+                Lorem ipsum nunc ultrices
+              </h4>
+              <p className="text-white/70 leading-relaxed">
+                Lorem ipsum dolor sit amet consectetur. Diam in enim velit sagittis porttitor.
+                Eleifend amet dictum pulvinar dapibus pharetra lacus blandit enim. Condimentum
+                maecenas duis aliquet nulla in orci habitasse etiam porttitor.
+              </p>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex gap-4 pt-10">
+              <button className="w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition">
+                ←
+              </button>
+              <button className="w-10 h-10 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition">
+                →
+              </button>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </TealGlow>
   );
 };
 

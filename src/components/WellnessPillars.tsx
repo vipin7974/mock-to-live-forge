@@ -31,12 +31,11 @@ const WellnessPillars = () => {
       subtitle: "Life improvement"
     }
   ];
-
   const titleRef = useScrollAnimation('animate-fade-in');
   const pillarsRef = useStaggeredAnimation(150, 'animate-fade-in');
 
   return (
-    <section className="bg-wellness py-20 px-6">
+    <section className="bg-gradient-to-br from-secondary/20 0 to-primary/15 py-20 px-6">
       <div className="container mx-auto">
         <div ref={titleRef} className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 text-wellness-foreground">Our Wellness Pillars</h2>

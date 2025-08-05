@@ -1,17 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import heroImage from "@/assets/hero_img.png"; // Ensure this is the smiling man image
+import TealGlow from "./ui/tealglow";
 
 const HeroSection = () => {
   const heroContentRef = useScrollAnimation('animate-fade-in');
 
   return (
     <section
-      className="relative min-h-screen bg-cover bg-center bg-no-repeat text-white"
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat text-white rounded-b-3xl overflow-hidden"
       style={{ backgroundImage: `url(${heroImage})` }}
     >
       {/* Gradient overlay from left (black) to right (transparent) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent z-0" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent z-0" />
 
       {/* Content */}
       <div className="relative z-10 px-6 py-24 lg:py-32">
