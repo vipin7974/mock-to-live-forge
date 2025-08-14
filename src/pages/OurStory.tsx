@@ -2,6 +2,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import  heroImage from "@/assets/ourStory_hero_bg.jpg";
+import the_silent_crisis from "@/assets/the_slient_crises_OS.jpg";
+import our_story from "@/assets/our_mission_os.jpg";
+import why_be_ballsy from "@/assets/why_be_ballsy_os.jpg";
+import our_vision from "@/assets/our_vision_os.jpg"
+import journey_ahead from "@/assets/the_jusrney_ahead_os.jpg"
 
 const OurStory = () => {
   const heroRef = useScrollAnimation('animate-fade-in');
@@ -13,30 +19,33 @@ const OurStory = () => {
 
   return (
     <div className="min-h-screen">
-      <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/20 to-secondary/20 px-6">
-        <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center pt-20">
-          <div ref={heroRef} className="space-y-6">
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
-              Breaking the Silence,<br />
+
+ {/* Hero Section */}
+ <section
+        className="relative min-h-screen bg-cover bg-center bg-no-repeat text-white rounded-b-3xl overflow-hidden"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
+        {/* Gradient overlay from left (black) to right (transparent) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent z-0" />
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 z-10 flex items-center justify-center px-4">
+          <div ref={heroRef} className="max-w-4xl text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Breaking the Silence,
+              <br />
               <span className="text-primary">Building the Courage</span>
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              In a society where we're expected to be the pillars of strength, we often forget that even pillars need support. Be Ballsy was born from a simple yet powerful realization: Indian men deserve a safe space to speak up about their health, their struggles, and their dreams without judgment.
+            <p className="text-2xl md:text-2xl mb-8 text-hero-foreground/90 max-w-3xl mx-auto">
+            In a society where we're expected to be the pillars of strength, we often forget that even pillars need support. Be Ballsy was born from a simple yet powerful realization: Indian men deserve a safe space to speak up about their health, their struggles, and their dreams without judgment.
             </p>
-          </div>
-          <div className="relative">
-            <div className="w-full h-96 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-3xl flex items-center justify-center">
-              <div className="text-6xl">🧔🏻</div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* The Silent Crisis */}
-      <section className="py-20 px-6 bg-background">
+      <section className="py-20 px-6 bg-gradient-to-br from-secondary/20 to-primary/15  xl:text-2xl lg:text-2xl md:text-xl text-sm">
         <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div ref={section1Ref} className="space-y-6">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
@@ -46,20 +55,21 @@ const OurStory = () => {
               Every day, millions of Indian men battle in silence. Depression masked as anger. Anxiety disguised as irritability. Physical health issues ignored until they become critical. Relationship problems swept under the rug. The cultural expectation to be the 'strong one' has created a generation of men who suffer alone.
             </p>
           </div>
-          <div className="relative">
-            <div className="w-full h-80 bg-gradient-to-br from-muted to-muted/50 rounded-2xl flex items-center justify-center">
-              <div className="text-5xl">😔</div>
+          <div className="relative ">
+            <div className="w-full h-full bg-gradient-to-br from-muted to-muted/50flex items-center justify-center">
+              <img src={the_silent_crisis} className="w-full h-full object-cover scale-x-[-1] rounded-3xl"/>
             </div>
           </div>
         </div>
       </section>
 
       {/* Our Mission */}
-      <section className="py-20 px-6 bg-muted/20">
+      
+      <section className="py-20 px-6 bg-muted/20 xl:text-2xl lg:text-2xl md:text-xl text-sm">
         <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative order-2 lg:order-1">
-            <div className="w-full h-80 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl flex items-center justify-center">
-              <div className="text-5xl">🎯</div>
+        <div className="relative order-2 lg:order-1">
+            <div className="w-full h-full bg-gradient-to-br from-muted to-muted/50flex items-center justify-center">
+              <img src={our_story} className="w-full h-full object-cover scale-x-[-1] rounded-3xl"/>
             </div>
           </div>
           <div ref={section2Ref} className="space-y-6 order-1 lg:order-2">
@@ -74,30 +84,32 @@ const OurStory = () => {
       </section>
 
       {/* Why "Be Ballsy"? */}
-      <section className="py-20 px-6 bg-background">
+
+
+      <section className="py-20 px-6 bg-gradient-to-br from-secondary/20 to-primary/15 xl:text-2xl lg:text-2xl md:text-xl text-sm">
         <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div ref={section3Ref} className="space-y-6">
+          <div ref={section1Ref} className="space-y-6">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
-              Why "Be Ballsy"?
+            Why "Be Ballsy"?
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              The name reflects our philosophy: having the guts to prioritize your wellbeing, the courage to seek help, and the strength to break free from societal expectations that harm your health. It's about being brave enough to choose yourself.
+            The name reflects our philosophy: having the guts to prioritize your wellbeing, the courage to seek help, and the strength to break free from societal expectations that harm your health. It's about being brave enough to choose yourself.
             </p>
           </div>
-          <div className="relative">
-            <div className="w-full h-80 bg-gradient-to-br from-accent/30 to-primary/20 rounded-2xl flex items-center justify-center">
-              <div className="text-6xl font-bold text-primary">BALANCE</div>
+          <div className="relative ">
+            <div className="w-full h-full bg-gradient-to-br from-muted to-muted/50flex items-center justify-center">
+              <img src={why_be_ballsy} className="w-full h-full object-cover scale-x-[-1] rounded-3xl"/>
             </div>
           </div>
         </div>
       </section>
 
       {/* Our Vision */}
-      <section className="py-20 px-6 bg-muted/20">
+      <section className="py-20 px-6 bg-muted/20 xl:text-2xl lg:text-2xl md:text-xl text-sm">
         <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative order-2 lg:order-1">
-            <div className="w-full h-80 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-2xl flex items-center justify-center">
-              <div className="text-5xl">👥</div>
+        <div className="relative order-2 lg:order-1">
+            <div className="w-full h-full bg-gradient-to-br from-muted to-muted/50flex items-center justify-center">
+              <img src={our_vision} className="w-full h-full object-cover scale-x-[-1] rounded-3xl"/>
             </div>
           </div>
           <div ref={section4Ref} className="space-y-6 order-1 lg:order-2">
@@ -112,38 +124,44 @@ const OurStory = () => {
       </section>
 
       {/* The Journey Ahead */}
-      <section className="py-20 px-6 bg-gradient-to-br from-primary/10 to-secondary/10">
-        <div className="container mx-auto text-center space-y-8">
-          <div ref={finalRef} className="max-w-4xl mx-auto space-y-6">
-            <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
-              The Journey Ahead
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Every man who reaches out, every conversation started, every stigma broken - it all contributes to a larger change. Join us in this mission. Because when men are healthy and happy, entire families and communities flourish.
-            </p>
-            <p className="text-xl font-semibold text-primary">
-              Be Ballsy. Be You. Be Well.
-            </p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-            <Button 
-              variant="default" 
-              className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-medium"
-            >
-              Begin Your Wellness Journey
-            </Button>
-            <Button 
-              variant="outline" 
-              className="px-8 py-3 rounded-full font-medium"
-            >
-              Talk To Someone Now →
-            </Button>
-          </div>
-        </div>
-      </section>
+      <section className="relative m-12 m-auto mb-10 rounded-3xl overflow-hidden max-h-[480px] h-[480px] flex items-center">
+  {/* Background image */}
+  <img
+    src={journey_ahead}
+    alt="Wellness Background"
+    className="absolute inset-0 w-full h-full object-cover scale-x-[-1]"
+  />
+  {/* Gradient overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-0" />
 
-      <Footer />
+  {/* Content */}
+  <div className="relative z-10 w-full h-full flex items-center">
+    <div className="max-w-2xl pl-10 pr-4 space-y-6">
+      <h2 className="text-4xl lg:text-5xl font-bold text-white">
+        The Journey Ahead
+      </h2>
+      <p className="text-lg text-white/90 leading-relaxed">
+        Every man who reaches out, every conversation started, every stigma broken – it all contributes to a larger change. 
+        Join us in this mission. Because when men are healthy and happy, entire families and communities flourish.
+      </p>
+      <p className="text-lg italic text-white font-semibold">
+        Be Ballsy. Be You. Be Well.
+      </p>
+
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 pt-4">
+        <button className="bg-primary hover:bg-[#26B3AD] text-white px-8 py-3 rounded-md font-medium shadow-md">
+          Begin Your Wellness Journey
+        </button>
+        <button className="bg-primary hover:bg-[#26B3AD] text-white px-8 py-3 rounded-md font-medium shadow-md flex items-center gap-2">
+          Talk To Someone Now
+          <span>→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };

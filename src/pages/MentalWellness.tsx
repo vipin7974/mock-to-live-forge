@@ -14,7 +14,6 @@ const MentalWellness = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       
       {/* Hero Section */}
       <section 
@@ -233,7 +232,6 @@ const MentalWellness = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

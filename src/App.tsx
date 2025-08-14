@@ -3,6 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Layout from "@/components/Layout"; // New layout
 import Index from "./pages/Index";
 import OurStory from "./pages/OurStory";
 import Services from "./pages/Services";
@@ -22,15 +24,19 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/ourStory" element={<OurStory />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/reachOut" element={<ReachOut />} />
-          <Route path="/mentalWellness" element={<MentalWellness />} />
-          <Route path="/physicalWellness" element={<PhysicalWellness />} />
-          <Route path="/intimateWellness" element={<IntimateWellness />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          {/* Wrap all main pages inside the layout */}
+          <Route element={<Layout />}>
+            <Route path="/" element={<Index />} />
+            <Route path="/ourStory" element={<OurStory />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/reachOut" element={<ReachOut />} />
+            <Route path="/mentalWellness" element={<MentalWellness />} />
+            <Route path="/physicalWellness" element={<PhysicalWellness />} />
+            <Route path="/intimateWellness" element={<IntimateWellness />} />
+          </Route>
+
+          {/* Catch-all */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -5,7 +5,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Phone, Mail, MessageCircle, Calendar } from "lucide-react";
+import { Phone, Mail, MessageCircle, Calendar, Ear, HeartHandshake, Lightbulb, Handshake } from "lucide-react";
+import TealGlow from "@/components/ui/tealglow";
+import reachout_bg from "@/assets/react_out_bg.jpg"
+import message_us from "@/assets/send_msg_ro.jpg"
+import starPentagon from "@/assets/Star 1.png";
+import remember_rou from "@/assets/remember_ROU.jpg";
 
 const ReachOut = () => {
   const heroRef = useScrollAnimation("animate-fade-in");
@@ -15,35 +20,70 @@ const ReachOut = () => {
   const expectRef = useScrollAnimation("animate-fade-in", 0.1);
   const ctaRef = useScrollAnimation("animate-fade-in", 0.1);
 
+  const pillars = [
+    {
+      icon: <Ear className="w-8 h-8" />,
+      title: "Personalized Wellness Plans",
+      description:
+        "Tailored approaches that fit your lifestyle and goals, whether they align with your unique preferences.",
+    },
+    {
+      icon: <HeartHandshake className="w-8 h-8" />,
+      title: "Confidential Consultations",
+      description:
+        " Fully private conversations where we listen without judgment and offer care with utmost confidentiality.",
+    },
+    {
+      icon: <Lightbulb className="w-8 h-8" />,
+      title: "Ongoing Support",
+      description:
+        "We're with you every step of the wellness journey, providing ongoing support and guidance.",
+    },
+    {
+      icon: <Handshake className="w-8 h-8" />,
+      title: "Family Guidance",
+      description:
+        "Support for involving your family in your wellness and healing journey when appropriate.",
+    },
+    {
+      icon: <Handshake className="w-8 h-8" />,
+      title: "Crisis Support",
+      description:
+        "Immediate help when you need it most.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       
       {/* Hero Section */}
-      <section ref={heroRef} className="bg-[#2A2A2A] text-white pt-32 pb-20 px-6">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl font-bold mb-6 leading-tight">
+      <TealGlow
+          ref={heroRef}
+          className="py-20 px-6 bg-[#111111] text-white rounded-b-3xl"
+        >
+          {" "}
+          <div className="container mx-auto mt-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 We're Here to Help<br />
                 You Help Yourself
-              </h1>
-              <p className="text-xl text-white/80 mb-8 leading-relaxed">
+                </h1>
+                <p className="text-lg text-muted mb-8">
                 Taking the first step toward wellness can feel overwhelming, but you don't have to do it alone. At Be Ballsy, we'll connect you with healthcare providers. We're your partners in building a healthier, happier life.
-              </p>
-            </div>
-            <div className="flex justify-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
-                <img 
-                  src="/lovable-uploads/0812f20c-fba7-424a-9cee-3aa79cf852f9.png" 
-                  alt="Happy man on phone" 
-                  className="w-full h-auto rounded-xl max-w-sm"
+                </p>
+              </div>
+              <div className="relative">
+                <img
+                  src={reachout_bg}
+                  alt="Man working on laptop"
+                  className="rounded-2xl w-full object-cover h-[400px]"
                 />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#111111] to-transparent rounded-2xl z-0" />
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </TealGlow>
 
       {/* Contact Form Section */}
       <section ref={formRef} className="bg-gradient-to-b from-primary/5 to-white py-20 px-6">
@@ -51,7 +91,7 @@ const ReachOut = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <img 
-                src="/src/assets/doctor-portrait.jpg" 
+                src={message_us} 
                 alt="Professional counselor" 
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />
@@ -97,82 +137,55 @@ const ReachOut = () => {
       </section>
 
       {/* Why Reach Out Section */}
-      <section ref={whyRef} className="py-20 px-6 bg-white">
-        <div className="container mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-12">Why Reach Out?</h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+      <section className="py-16 bg-gradient-to-br from-white to-primary/5">
+        <div className="container mx-auto px-4">
+          <div
+            ref={whyRef}
+            className="max-w-4xl mx-auto text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Why Reach Out?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Every conversation starts with you. Whether you're dealing with stress, relationship issues, 
             health concerns, or simply want to optimize your wellbeing, reaching out is the first step 
             toward positive change. We're here to listen, understand, and guide you forward so that you 
             won't feel alone any unique situation.
-          </p>
-        </div>
-      </section>
+            </p>
+            <h2 className="text-2xl md:text-2xl mt-5 text-gray-900">
+            How We Can Help You
+            </h2>
+          </div>
 
-      {/* How We Can Help Section */}
-      <section ref={servicesRef} className="py-20 px-6 bg-gray-50">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">How We Can Help</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-              <CardContent className="p-0">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="w-8 h-8 bg-primary rounded-full"></div>
+          {/* Pillar Cards - insert grid here */}
+          <div
+            ref={servicesRef}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mt-5"
+          >
+            {pillars.map((pillar, index) => (
+              <div
+                key={index}
+                className="relative bg-white rounded-xl shadow-md pt-12 px-4 pb-6 text-center"
+              >
+                {/* 🟢 Pentagon Image Positioned on Top Center */}
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-16 h-16">
+                  <img
+                    src={starPentagon}
+                    alt="icon shape"
+                    className="w-full h-full object-contain"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center text-primary">
+                    {pillar.icon}
+                  </div>
                 </div>
-                <h3 className="font-bold mb-3">Confidential Consultations</h3>
-                <p className="text-sm text-gray-600">
-                  Fully private conversations where we listen without judgment and offer care with utmost confidentiality.
-                </p>
-              </CardContent>
-            </Card>
 
-            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-              <CardContent className="p-0">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="w-8 h-8 bg-primary rounded-full"></div>
-                </div>
-                <h3 className="font-bold mb-3">Personalized Wellness Plans</h3>
-                <p className="text-sm text-gray-600">
-                  Tailored approaches that fit your lifestyle and goals, whether they align with your unique preferences.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-              <CardContent className="p-0">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="w-8 h-8 bg-primary rounded-full"></div>
-                </div>
-                <h3 className="font-bold mb-3">Ongoing Support</h3>
-                <p className="text-sm text-gray-600">
-                  We're with you every step of the wellness journey, providing ongoing support and guidance.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-              <CardContent className="p-0">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="w-8 h-8 bg-primary rounded-full"></div>
-                </div>
-                <h3 className="font-bold mb-3">Family Guidance</h3>
-                <p className="text-sm text-gray-600">
-                  Support for involving your family in your wellness and healing journey when appropriate.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-              <CardContent className="p-0">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="w-8 h-8 bg-primary rounded-full"></div>
-                </div>
-                <h3 className="font-bold mb-3">Crisis Support</h3>
-                <p className="text-sm text-gray-600">
-                  Immediate help when you need it most.
-                </p>
-              </CardContent>
-            </Card>
+                {/* 📄 Card Content */}
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {pillar.title}
+                </h3>
+                <p className="text-gray-600 text-sm">{pillar.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -251,22 +264,38 @@ const ReachOut = () => {
       </section>
 
       {/* CTA Section */}
-      <section ref={ctaRef} className="relative py-20 px-6 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/src/assets/wellness-journey.jpg')"
-          }}
-        ></div>
-        <div className="relative container mx-auto text-center text-white">
-          <h2 className="text-4xl font-bold mb-6">Remember:</h2>
-          <p className="text-xl mb-4 max-w-3xl mx-auto">
-            Your wellbeing matters. Your mental health matters. Your happiness matters. Reaching out isn't about being weak.
+
+      <section
+  ref={ctaRef}
+  className="relative w-full py-20 px-4"
+  style={{
+    background: "linear-gradient(to right,#c7f4f0, white)",
+  }}
+>
+  <div className="max-w-5/6 mx-auto ">
+    {/* Card with image background */}
+    <div className="relative rounded-3xl overflow-hidden shadow-lg overflow-hidden max-h-[480px] h-[480px] flex items-center">
+      {/* Background image */}
+      <img
+        src={remember_rou}
+        alt="Wellness Background"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* Dark gradient overlay on image */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-0" />
+
+      {/* Card content */}
+      <div className="relative z-10 w-full h-full flex items-center px-6 py-8 md:px-10 md:py-12">
+        <div className="max-w-lg space-y-5">
+          <h2 className="text-4xl font-bold text-white">Remember:</h2>
+          <p className="text-base md:text-lg text-white/90 leading-relaxed">
+          Your wellbeing matters. Your mental health matters. Your happiness matters. Reaching out isn't about being weak.
           </p>
           <p className="text-2xl font-bold mb-8 text-primary">
             Because every man deserves to thrive.
           </p>
-          
+          {/* Buttons */}
           <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
             <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3">
               <Phone className="w-5 h-5 mr-2" />
@@ -286,9 +315,10 @@ const ReachOut = () => {
             </Button>
           </div>
         </div>
-      </section>
-
-      <Footer />
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   );
 };

@@ -13,8 +13,7 @@ const PhysicalWellness = () => {
   const startedRef = useScrollAnimation();
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <div className="min-h-screen bg-background">    
       
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[hsl(180,45%,85%)] to-[hsl(180,35%,75%)] overflow-hidden">
@@ -288,8 +287,6 @@ const PhysicalWellness = () => {
           />
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };
