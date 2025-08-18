@@ -113,3 +113,9 @@ All colors MUST be HSL.
 
   }
 }
+
+.dad_wellness_services {
+  background: linear-gradient(135deg, #0a0f1a 0%, #0a121e 100%);
+  color: white;
+  font-family: 'Inter', sans-serif;
+}

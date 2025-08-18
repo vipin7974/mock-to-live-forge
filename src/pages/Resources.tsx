@@ -52,6 +52,12 @@ const Resources = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#111111] to-transparent rounded-2xl z-0" />
               </div>
+              <div>
+              <Button size="lg" className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 text-lg rounded-full font-semibold">
+              Book Consultation
+              </Button>
+             
+            </div>
             </div>
           </div>
         </TealGlow>

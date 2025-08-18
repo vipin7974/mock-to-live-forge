@@ -3,7 +3,24 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { CheckCircle, Heart, Shield, Users, Clock, Stethoscope } from "lucide-react";
+import {
+  CheckCircle,
+  Heart,
+  Shield,
+  Users,
+  Clock,
+  Stethoscope,
+} from "lucide-react";
+import heroImage from "@/assets/iw_hero_bg.jpg";
+import understanding_mens_health from "@/assets/iw_understading.jpg";
+import getting_started from "@/assets/iw_getting_started.jpg";
+import { Dot, HeartHandshakeIcon } from "lucide-react";
+import TealGlow from "@/components/ui/tealglow";
+import why_intimate from "@/assets/iw_why_intimate.jpg";
+import our_quality_promise from "@/assets/iw_our_expert.jpg";
+import expert_guidence from "@/assets/iw_expert_guidens.jpg";
+import common_intimate from "@/assets/iw_focus.jpg";
+import cultural_sensitivity from "@/assets/iw_cultural.jpg";
 
 const IntimateWellness = () => {
   const heroRef = useScrollAnimation();
@@ -18,357 +35,349 @@ const IntimateWellness = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10" />
-        <div className="container mx-auto px-6 py-20 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Premium Intimate Care{" "}
-                <span className="text-primary">Products for Indian Men</span>
+      <section
+        ref={heroRef}
+        className="relative min-h-screen bg-cover bg-center bg-no-repeat text-white rounded-b-3xl overflow-hidden"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
+        {/* Gradient overlay from left (black) to right (transparent) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent z-0" />
+
+        {/* Content */}
+        <div className="relative z-10 px-6 py-24 lg:py-32">
+          <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
+            <div
+              ref={heroRef}
+              className="flex-1 text-center lg:text-left space-y-8"
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                Premium Intimate Care
+                <br />
+                Products for Indian Men
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Addressing the unique health needs of Indian men with evidence-based 
-                intimate wellness solutions. Discreet, professional, and culturally sensitive care.
+              <p className="text-lg md:text-xl text-gray-200 max-w-2xl">
+                Intimate wellness is an essential part of overall health that's
+                often overlooked. At Be Ballsy, we provide premium intimate care
+                products and guidance specifically designed for Indian men's
+                needs.
               </p>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
-                Get Started Today
-              </Button>
-            </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-400/20 to-blue-500/20 rounded-3xl blur-3xl" />
-              <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-                <div className="grid grid-cols-2 gap-4 text-center">
-                  <div className="space-y-2">
-                    <Heart className="w-8 h-8 text-primary mx-auto" />
-                    <h3 className="font-semibold text-foreground">Mental Health</h3>
-                  </div>
-                  <div className="space-y-2">
-                    <Shield className="w-8 h-8 text-primary mx-auto" />
-                    <h3 className="font-semibold text-foreground">Intimate Care</h3>
-                  </div>
-                  <div className="space-y-2">
-                    <Users className="w-8 h-8 text-primary mx-auto" />
-                    <h3 className="font-semibold text-foreground">Relationship</h3>
-                  </div>
-                  <div className="space-y-2">
-                    <Clock className="w-8 h-8 text-primary mx-auto" />
-                    <h3 className="font-semibold text-foreground">24/7 Support</h3>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Understanding Intimate Wellness */}
-      <section ref={understandingRef} className="py-20 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-foreground">
-                Understanding Intimate Wellness
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Intimate wellness goes beyond just physical health. It encompasses the complete 
-                well-being of your intimate relationships, sexual health, and personal confidence. 
-                For Indian men, cultural barriers often prevent open discussion about these crucial 
-                health topics, leading to untreated issues that affect overall quality of life.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Our approach combines traditional understanding with modern medical science to provide 
-                comprehensive intimate wellness solutions tailored specifically for Indian men.
-              </p>
-            </div>
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/0ffb66d0-9b2b-44e1-abe5-3e313a71ad48.png" 
-                alt="Understanding Intimate Wellness"
-                className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
-              />
-            </div>
+      {/* Understanding Men's Physical Health */}
+
+      <section
+        ref={understandingRef}
+        className="py-20 bg-gradient-to-r from-secondary/20 to-primary/15"
+      >
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Understanding
+              <br />
+              Intimate Wellness
+            </h2>
+            <p className="text-gray-600 text-lg leading-relaxed mb-6">
+              Intimate wellness encompasses personal hygiene, sexual health, and
+              overall intimate care. Proper intimate wellness not only improves
+              physical health but also boosts confidence and enhances intimate
+              relationships.
+            </p>
+          </div>
+          <div>
+            <img
+              src={understanding_mens_health}
+              alt=""
+              className="rounded-2xl shadow-xl w-full"
+            />
           </div>
         </div>
       </section>
 
       {/* Why Intimate Wellness Matters */}
-      <section ref={whyMattersRef} className="py-20 bg-muted/50">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative order-2 lg:order-1">
-              <img 
-                src="/lovable-uploads/0ffb66d0-9b2b-44e1-abe5-3e313a71ad48.png" 
-                alt="Why Intimate Wellness Matters"
-                className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
-              />
-            </div>
-            <div className="space-y-6 order-1 lg:order-2">
-              <h2 className="text-4xl font-bold text-foreground">
-                Why Intimate Wellness Matters
-              </h2>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Confidence</h3>
-                    <p className="text-muted-foreground">Restore self-assurance in intimate relationships</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Relationships</h3>
-                    <p className="text-muted-foreground">Strengthen bonds with your partner through better communication</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Overall Health</h3>
-                    <p className="text-muted-foreground">Intimate wellness affects mental and physical well-being</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Quality of Life</h3>
-                    <p className="text-muted-foreground">Improved satisfaction in all aspects of life</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+      <section
+        ref={whyMattersRef}
+        className="py-20 bg-gradient-to-r from-secondary/20 to-primary/15"
+      >
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src={why_intimate}
+              alt=""
+              className="rounded-2xl shadow-xl w-full scale-x-[-1]"
+            />
+          </div>
+          <div>
+            <h2 className="text-4xl font-bold mb-8">
+              Why Intimate Wellness Matters
+            </h2>
+            <ul className="space-y-6">
+              {[
+                [
+                  "Health:",
+                  "Prevents infections and maintains optimal intimate health",
+                ],
+                [
+                  "Confidence:",
+                  "Feeling fresh and clean boosts self-assurance",
+                ],
+                [
+                  "Relationships:",
+                  "Better intimate care enhances partner satisfaction",
+                ],
+                ["Comfort:", "Proper care prevents irritation and discomfort"],
+                ["Prevention:", "Regular care prevents serious health issues"],
+              ].map(([heading, desc], idx) => (
+                <li key={idx}>
+                  <h3 className="text-lg font-bold mb-1 flex gap-2">
+                    <span>
+                      <HeartHandshakeIcon className="text-teal-500" />
+                    </span>
+                    {heading}
+                  </h3>
+                  <p className="text-gray-600">{desc}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
       {/* Product Categories - Coming Soon */}
-      <section ref={categoriesRef} className="py-20 bg-background">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
-            Our Product Categories - <span className="text-primary">Coming Soon!</span>
-          </h2>
-          <p className="text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
-            We're developing a comprehensive range of intimate wellness products specifically designed for Indian men.
-          </p>
-          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20">
-            <h3 className="text-2xl font-semibold text-foreground mb-4">Stay Updated</h3>
-            <p className="text-muted-foreground mb-6">Be the first to know when our products launch</p>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Notify Me
-            </Button>
-          </div>
-        </div>
-      </section>
+      <TealGlow className="py-20 bg-slate-900 text-white text-center">
+        <h1 className="text-white text-3xl">
+          Our Product Categories -{" "}
+          <span className="text-primary">Coming Soon!</span>
+        </h1>
+      </TealGlow>
 
       {/* Our Quality Promise */}
-      <section ref={qualityRef} className="py-20 bg-muted/50">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-foreground">
-                Our Quality Promise
-              </h2>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Clinically Tested</h3>
-                    <p className="text-muted-foreground">All products undergo rigorous testing for safety and efficacy</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Natural Ingredients</h3>
-                    <p className="text-muted-foreground">Formulated with premium natural and ayurvedic ingredients</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Expert Formulation</h3>
-                    <p className="text-muted-foreground">Developed by leading healthcare professionals and specialists</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Quality Assurance</h3>
-                    <p className="text-muted-foreground">Manufactured in certified facilities with strict quality controls</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/0ffb66d0-9b2b-44e1-abe5-3e313a71ad48.png" 
-                alt="Quality Promise"
-                className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
-              />
-            </div>
+
+      <section
+        ref={qualityRef}
+        className="py-20 bg-gradient-to-r from-secondary/20 to-primary/15"
+      >
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl font-bold mb-8">Our Quality Promise</h2>
+            <ul className="space-y-6">
+              {[
+                [
+                  "Clinically Tested:",
+                  "All products undergo rigorous safety and efficacy testing",
+                ],
+                [
+                  "Dermatological Approved:",
+                  "Safe for sensitive skin and intimate areas",
+                ],
+                [
+                  "Natural Ingredients:",
+                  "Focus on natural, gentle, and effective ingredients",
+                ],
+                [
+                  "Discreet Packaging:",
+                  "Complete privacy in packaging and delivery",
+                ],
+                [
+                  "Quality Assurance:",
+                  "Highest manufacturing and quality standards",
+                ],
+              ].map(([heading, desc], idx) => (
+                <li key={idx}>
+                  <h3 className="text-lg font-bold mb-1 flex gap-2">
+                    <span>
+                      <HeartHandshakeIcon className="text-teal-500" />
+                    </span>
+                    {heading}
+                  </h3>
+                  <p className="text-gray-600">{desc}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <img
+              src={our_quality_promise}
+              alt=""
+              className="rounded-2xl shadow-xl w-full scale-x-[-1]"
+            />
           </div>
         </div>
       </section>
 
       {/* Expert Guidance */}
-      <section ref={expertRef} className="py-20 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative order-2 lg:order-1">
-              <img 
-                src="/lovable-uploads/0ffb66d0-9b2b-44e1-abe5-3e313a71ad48.png" 
-                alt="Expert Guidance"
-                className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
-              />
-            </div>
-            <div className="space-y-6 order-1 lg:order-2">
-              <h2 className="text-4xl font-bold text-foreground">
-                Expert Guidance
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Our team includes experienced doctors, therapists, and wellness experts who understand 
-                the unique challenges faced by Indian men in intimate wellness.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <Stethoscope className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Personalized Treatment Plans</h3>
-                    <p className="text-muted-foreground">Tailored solutions based on individual needs and health profiles</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Users className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Ongoing Support</h3>
-                    <p className="text-muted-foreground">Continuous monitoring and adjustments for optimal results</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Shield className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-foreground">Confidential Care</h3>
-                    <p className="text-muted-foreground">Complete privacy and discretion in all consultations</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <section
+        ref={expertRef}
+        className="py-20 bg-gradient-to-r from-secondary/20 to-primary/15"
+      >
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src={expert_guidence}
+              alt=""
+              className="rounded-2xl shadow-xl w-full"
+            />
+          </div>
+          <div>
+            <h2 className="text-4xl font-bold mb-8">Expert Guidance</h2>
+            <p>Along with premium products, we provide:</p>
+            <ul className="space-y-6">
+              {[
+                ["Usage Instructions:", "Detailed guidance on proper use"],
+                [
+                  "Educational Content:",
+                  "Information about intimate health and hygiene",
+                ],
+                [
+                  "Personalized Recommendations:",
+                  "Products suited to your specific needs",
+                ],
+                ["Ongoing Support:", "Expert advice and customer support"],
+              ].map(([heading, desc], idx) => (
+                <li key={idx}>
+                  <h3 className="text-lg font-bold mb-1 flex gap-2">
+                    <span>
+                      <HeartHandshakeIcon className="text-teal-500" />
+                    </span>
+                    {heading}
+                  </h3>
+                  <p className="text-gray-600">{desc}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* When to Seek Help */}
-      <section ref={helpRef} className="py-20 bg-muted/50">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-foreground">
-                When to Seek Help
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Recognizing when to seek professional help is the first step toward better intimate wellness.
-              </p>
-              <div className="grid gap-3">
-                <div className="flex items-center space-x-3 p-3 bg-background rounded-lg border">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground">Performance anxiety or stress</span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-background rounded-lg border">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground">Relationship communication issues</span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-background rounded-lg border">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground">Low confidence or self-esteem</span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-background rounded-lg border">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground">Physical health concerns</span>
-                </div>
-                <div className="flex items-center space-x-3 p-3 bg-background rounded-lg border">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground">Hormonal imbalances</span>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/0ffb66d0-9b2b-44e1-abe5-3e313a71ad48.png" 
-                alt="When to Seek Help"
-                className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
-              />
-            </div>
+      {/* Common Intimate Health Concerns */}
+
+      <section
+        ref={qualityRef}
+        className="py-20 bg-gradient-to-r from-secondary/20 to-primary/15"
+      >
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl font-bold mb-8">
+              Common Intimate Health Concerns
+            </h2>
+            <ul className="space-y-4">
+              {[
+                "Bacterial and fungal infections",
+                "Odor and hygiene issues",
+                "Skin irritation and sensitivity",
+                "Dryness and discomfort",
+                "Grooming and hair management",
+                "Performance and confidence issues",
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <HeartHandshakeIcon className="text-teal-500" />
+                  <span className="text-gray-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <img
+              src={common_intimate}
+              alt=""
+              className="rounded-2xl shadow-xl w-full"
+            />
           </div>
         </div>
       </section>
 
-      {/* Treatment Options */}
-      <section ref={treatmentRef} className="py-20 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative order-2 lg:order-1">
-              <img 
-                src="/lovable-uploads/0ffb66d0-9b2b-44e1-abe5-3e313a71ad48.png" 
-                alt="Treatment Options"
-                className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
-              />
-            </div>
-            <div className="space-y-6 order-1 lg:order-2">
-              <h2 className="text-4xl font-bold text-foreground">
-                Treatment Options
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                We offer multiple treatment approaches to address various intimate wellness concerns.
-              </p>
-              <div className="space-y-3">
-                <div className="p-4 bg-muted/50 rounded-lg border">
-                  <h3 className="font-semibold text-foreground mb-2">Counseling and Therapy</h3>
-                  <p className="text-muted-foreground text-sm">Professional guidance for emotional and psychological aspects</p>
-                </div>
-                <div className="p-4 bg-muted/50 rounded-lg border">
-                  <h3 className="font-semibold text-foreground mb-2">Lifestyle Modifications</h3>
-                  <p className="text-muted-foreground text-sm">Personalized recommendations for diet, exercise, and habits</p>
-                </div>
-                <div className="p-4 bg-muted/50 rounded-lg border">
-                  <h3 className="font-semibold text-foreground mb-2">Medical Interventions</h3>
-                  <p className="text-muted-foreground text-sm">Clinical treatments when medically necessary</p>
-                </div>
-                <div className="p-4 bg-muted/50 rounded-lg border">
-                  <h3 className="font-semibold text-foreground mb-2">Ongoing Support Programs</h3>
-                  <p className="text-muted-foreground text-sm">Long-term wellness maintenance and monitoring</p>
-                </div>
-              </div>
-            </div>
+      {/* Cultural Sensitivity */}
+      <section
+        ref={expertRef}
+        className="py-20 bg-gradient-to-r from-secondary/20 to-primary/15"
+      >
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src={cultural_sensitivity}
+              alt=""
+              className="rounded-2xl shadow-xl w-full"
+            />
+          </div>
+          <div>
+            <h2 className="text-4xl font-bold mb-8">Cultural Sensitivity</h2>
+            <p>
+              We understand that intimate wellness can be a sensitive topic in
+              Indian culture. Our approach is:
+            </p>
+            <ul className="space-y-6">
+              {[
+                [
+                  "Respectful:",
+                  "Acknowledging cultural values and sensitivities",
+                ],
+                ["Educational:", "Providing information without judgment"],
+                ["Discreet:", "Ensuring complete privacy and confidentiality"],
+                [
+                  "Supportive:",
+                  "Creating a comfortable environment for questions and concerns",
+                ],
+              ].map(([heading, desc], idx) => (
+                <li key={idx}>
+                  <h3 className="text-lg font-bold mb-1 flex gap-2">
+                    <span>
+                      <HeartHandshakeIcon className="text-teal-500" />
+                    </span>
+                    {heading}
+                  </h3>
+                  <p className="text-gray-600">{desc}</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
       {/* Getting Started CTA */}
-      <section ref={ctaRef} className="py-20 bg-gradient-to-br from-primary/10 to-secondary/10">
-        <div className="container mx-auto px-6 text-center">
-          <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
-              Getting Started
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Take the first step towards better intimate wellness. Our compassionate team is here 
-              to support you with complete confidentiality and understanding.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3">
-                Book a Consultation
-              </Button>
-              <Button variant="outline" size="lg" className="px-8 py-3">
-                Browse Health Journal
-              </Button>
+      <section
+        ref={ctaRef}
+        className="py-20 px-6"
+        style={{ background: "linear-gradient(to top, #f0fdfd, white)" }}
+      >
+        <div className="mx-auto">
+          <div className="relative rounded-3xl overflow-hidden h-[480px] flex items-center">
+            <img
+              src={getting_started}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+            <div className="relative z-10 max-w-lg px-8">
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Getting Started
+              </h2>
+              <p className="text-white/90 mb-4">
+                Begin your intimate wellness journey with a confidential
+                consultation.
+              </p>
+              <h3 className="text-gray-300 mb-8">
+                Invest in your intimate wellness – it's an investment in your
+                overall confidence and health.
+              </h3>
+              <div className="flex flex-row gap-4">
+                <Button className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-full">
+                  Schedule Product Consultation
+                </Button>
+                <Button
+                  variant="destructive"
+                  className="bg-blue-600 hover:bg-red-700 text-white px-6 py-3 rounded-full"
+                >
+                  Browse Product Categories
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
     </div>
   );
 };

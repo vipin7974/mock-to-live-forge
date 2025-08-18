@@ -1,8 +1,14 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import heroImage from "@/assets/pw_home_bg.jpg";
+import understanding_mens_health from "@/assets/pw_understanding.jpg";
+import our_approach from "@/assets/pw_our_appoarch.jpg";
+import seek_for_help from "@/assets/pw_seek_help.jpg";
+import getting_started from "@/assets/pw_getting_started.jpg";
+import { Dot, HeartHandshakeIcon } from "lucide-react";
+import TealGlow from "@/components/ui/tealglow";
 
 const PhysicalWellness = () => {
   const heroRef = useScrollAnimation();
@@ -13,280 +19,261 @@ const PhysicalWellness = () => {
   const startedRef = useScrollAnimation();
 
   return (
-    <div className="min-h-screen bg-background">    
-      
+    <div className="min-h-screen bg-background">  
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[hsl(180,45%,85%)] to-[hsl(180,35%,75%)] overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+     
+      <section
+    ref={heroRef}
+      className="relative min-h-screen bg-cover bg-center bg-no-repeat text-white rounded-b-3xl overflow-hidden"
+      style={{ backgroundImage: `url(${heroImage})` }}
+    >
+      {/* Gradient overlay from left (black) to right (transparent) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent z-0" />
+
+      {/* Content */}
+      <div className="relative z-10 px-6 py-24 lg:py-32">
+        <div className="container mx-auto flex flex-col lg:flex-row items-center gap-12">
+          <div ref={heroRef} className="flex-1 text-center lg:text-left space-y-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Comprehensive Physical<br />
             Health for Indian Men
-          </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Discover holistic wellness solutions designed specifically for Indian men's health needs. From fitness guidance to nutrition counseling, we provide comprehensive support for your physical wellbeing journey.
-          </p>
-          <Button className="bg-[#54C7BF] hover:bg-[#54C7BF]/90 text-black font-semibold px-8 py-3 rounded-lg text-lg">
-            Start Your Health Journey
-          </Button>
-        </div>
-        
-        {/* Background illustration */}
-        <div className="absolute right-10 top-1/2 transform -translate-y-1/2 opacity-20">
-          <div className="w-96 h-96 bg-white/10 rounded-full flex items-center justify-center">
-            <div className="w-80 h-80 bg-white/10 rounded-full flex items-center justify-center">
-              <div className="w-64 h-64 bg-white/10 rounded-full"></div>
-            </div>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 max-w-2xl">
+            Physical wellness goes beyond just fitness. At Be Ballsy, we address the complete spectrum of men's physical health, including the sensitive topics that are often overlooked or ignored.
+            </p>
+
+            
           </div>
         </div>
-      </section>
-
+      </div>
+    </section>  
       {/* Understanding Men's Physical Health */}
-      <section ref={understandingRef} className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+
+      <section ref={understandingRef} className="py-20 bg-gradient-to-r from-secondary/20 to-primary/15">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Understanding Men's<br />
                 Physical Health
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Men's physical health encompasses a broad range of factors, from cardiovascular fitness and muscle strength to hormonal balance and metabolic health. Our approach addresses the unique physiological needs of Indian men.
+              Men's physical health needs are unique and often interconnected with mental and emotional wellbeing. We provide specialized care that addresses both common and complex health issues affecting Indian men.
               </p>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                We understand that cultural, dietary, and lifestyle factors play crucial roles in men's health outcomes. Our specialized programs are designed to work within your cultural context while promoting optimal health.
-              </p>
-            </div>
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/9f27338d-fdc2-4433-a37b-553bddcd57a1.png" 
-                alt="Understanding Men's Physical Health" 
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
+          </div>
+          <div>
+            <img
+              src={understanding_mens_health}
+              alt=""
+              className="rounded-2xl shadow-xl w-full"
+            />
           </div>
         </div>
       </section>
 
-      {/* Our Specialized Services */}
-      <section ref={servicesRef} className="py-20 bg-gray-900 text-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Our Specialized Services
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Service 1 */}
-            <Card className="bg-gray-800 border-gray-700 text-white">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-[#54C7BF] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9 12a3 3 0 1 1 6 0 3 3 0 0 1-6 0zM9 6a9 9 0 0 1 11 11.5A9 9 0 0 1 9 6z"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Comprehensive Health Screening</h3>
-                <ul className="text-gray-300 space-y-2 text-sm">
-                  <li>• Full body health assessment</li>
-                  <li>• Blood work and biomarker analysis</li>
-                  <li>• Cardiovascular health evaluation</li>
-                  <li>• Hormonal balance testing</li>
-                  <li>• Nutritional deficiency screening</li>
-                  <li>• Metabolic health assessment</li>
-                  <li>• Risk factor identification</li>
-                </ul>
-                <Button className="w-full mt-6 bg-[#54C7BF] hover:bg-[#54C7BF]/90 text-black font-semibold">
-                  Book Screening
-                </Button>
-              </CardContent>
-            </Card>
 
-            {/* Service 2 */}
-            <Card className="bg-gray-800 border-gray-700 text-white">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-[#54C7BF] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Personalized Fitness Programs</h3>
-                <ul className="text-gray-300 space-y-2 text-sm">
-                  <li>• Customized workout plans</li>
-                  <li>• Strength training protocols</li>
-                  <li>• Cardiovascular fitness programs</li>
-                  <li>• Flexibility and mobility work</li>
-                  <li>• Sports-specific training</li>
-                  <li>• Home workout alternatives</li>
-                  <li>• Progress tracking and adjustments</li>
-                </ul>
-                <Button className="w-full mt-6 bg-[#54C7BF] hover:bg-[#54C7BF]/90 text-black font-semibold">
-                  Get Started
-                </Button>
-              </CardContent>
-            </Card>
+     {/* Our Specialized Services */}
+     <TealGlow ref={servicesRef} className="py-20 bg-slate-900 text-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center mb-12">Our Specialized Services</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              ["Sexual Health & Sexology", [
+                "Comprehensive sexual health assessments",
+                "Relationship and intimacy counseling",
+                "Sexual performance concerns",
+                "Libido and desire issues",
+                "Sexual dysfunction treatment",
+                "Safe sex education and STI prevention"
+              ]],
+              ["Erectile Dysfunction (ED) Treatment", [
+                "Comprehensive ED evaluation",
+                "Medical and psychological causes assessment",
+                "Treatment options including medication, therapy, and lifestyle changes",
+                "Partner counseling and support",
+                "Long-term management strategies"
+              ]],
+              ["Men's Reproductive Health", [
+                "Preconception health optimization",
+                "Hormonal health evaluation",
+                "Testicular health and cancer screening",
+              ]],
+              ["General Physical Wellness", [
+                "Preventive health screenings",
+                "Cardiovascular health management",
+                "Diabetes prevention and management",
+                "Weight management and nutrition counseling",
+                "Exercise and fitness planning"
 
-            {/* Service 3 */}
-            <Card className="bg-gray-800 border-gray-700 text-white">
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-[#54C7BF] rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clipRule="evenodd"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Nutrition & Lifestyle Coaching</h3>
-                <ul className="text-gray-300 space-y-2 text-sm">
-                  <li>• Personalized meal planning</li>
-                  <li>• Indian cuisine optimization</li>
-                  <li>• Weight management strategies</li>
-                  <li>• Supplement recommendations</li>
-                  <li>• Hydration protocols</li>
-                  <li>• Sleep optimization</li>
-                  <li>• Stress management techniques</li>
-                </ul>
-                <Button className="w-full mt-6 bg-[#54C7BF] hover:bg-[#54C7BF]/90 text-black font-semibold">
-                  Learn More
-                </Button>
-              </CardContent>
-            </Card>
+              ]],
+              ["Hormonal Health", [
+                "Testosterone level assessment",
+                "Hormonal imbalance treatment",
+                "Age-related hormonal changes",
+                "Energy and vitality optimization"
+              ]]
+            ].map(([title, points], idx) => (
+              <Card key={idx} className="bg-slate-800 border border-slate-700 p-6">
+                <CardContent className="p-0">
+                  <h3 className="text-xl font-bold mb-4 text-white">{title}</h3>
+                  <ul className="space-y-2 mb-6">
+                    {points.map((point, i) => (
+                      <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
+                        <Dot />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button className="bg-teal-500 hover:bg-teal-600 text-white w-full rounded-full">
+                    Learn More
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
-      </section>
+      </TealGlow>
 
       {/* Our Approach */}
-      <section ref={approachRef} className="py-20 bg-gradient-to-br from-[hsl(180,45%,95%)] to-[hsl(180,35%,85%)]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-                Our Approach
-              </h2>
-              
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Culturally Informed Therapy</h3>
-                  <p className="text-gray-700">Our therapists understand the unique cultural context of Indian families and incorporate culturally sensitive approaches into treatment plans.</p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Evidence-Based Treatment</h3>
-                  <p className="text-gray-700">We use proven therapeutic methods including Cognitive Behavioral Therapy (CBT), mindfulness practices, and other evidence-based interventions.</p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Holistic Wellness</h3>
-                  <p className="text-gray-700">Our approach integrates mental health with physical wellness, recognizing the interconnected nature of mind and body health.</p>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Personalized Care</h3>
-                  <p className="text-gray-700">Every treatment plan is tailored to individual needs, taking into account personal history, cultural background, and specific health goals.</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/6635e4f0-e480-4c9a-b96a-6dbdcc0277c8.png" 
-                alt="Our Approach to Physical Wellness" 
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
+      <section ref={approachRef} className="py-20 bg-gradient-to-r from-secondary/20 to-primary/15">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl font-bold mb-8">Our Approach</h2>
+            <ul className="space-y-6">
+              {[
+                ["Discreet and Professional Care", "We understand that discussing physical and sexual health can be uncomfortable. Our specialists create a safe, judgment-free environment where you can openly discuss your concerns."],
+                ["Evidence-Based Treatment", "All our treatments are based on the latest medical research and best practices in men's health. We combine modern medicine with lifestyle modifications for optimal results."],
+                ["Holistic Assessment","Physical health issues often have multiple causes – physical, psychological, and lifestyle-related. We address all aspects to provide comprehensive treatment."],
+                ["Partner-Inclusive Care", "When appropriate and with your consent, we involve partners in treatment planning to ensure the best outcomes for your relationship and overall well being."]
+              ].map(([heading, desc], idx) => (
+                <li key={idx}>
+                  <h3 className="text-lg font-bold mb-1 flex gap-2"><span><HeartHandshakeIcon className="text-teal-500"/></span>{heading}</h3>
+                  <p className="text-gray-600">{desc}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <img src={our_approach} alt="" className="rounded-2xl shadow-xl w-full" />
           </div>
         </div>
       </section>
+
+      {/* Common Concerns We Address */}
+      <section ref={helpRef} className="py-20">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <img src={seek_for_help} alt="" className="rounded-2xl shadow-xl w-full" />
+          </div>
+          <div>
+            <h2 className="text-4xl font-bold mb-8">Common Concerns We Address</h2>
+            <ul className="space-y-4">
+              {[
+                "Sexual performance anxiety",
+                "Premature ejaculation",
+                "Loss of sexual desire",
+                "Fertility concerns",
+                "Physical fitness and stamina",
+                "Sleep disorders affecting physical health",
+                "Stress-related physical symptoms",
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <HeartHandshakeIcon className="text-teal-500"/>
+                  <span className="text-gray-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
 
       {/* When to Seek Help */}
-      <section ref={helpRef} className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/0812f20c-fba7-424a-9cee-3aa79cf852f9.png" 
-                alt="When to Seek Help" 
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
-            
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-                When to Seek Help
-              </h2>
-              
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-[#54C7BF] rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-700">Persistent fatigue or low energy levels</p>
-                </div>
-                
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-[#54C7BF] rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-700">Chronic stress or anxiety</p>
-                </div>
-                
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-[#54C7BF] rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-700">Sleep disturbances or insomnia</p>
-                </div>
-                
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-[#54C7BF] rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-700">Unexplained weight changes</p>
-                </div>
-                
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-[#54C7BF] rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-700">Digestive issues or changes in appetite</p>
-                </div>
-                
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-[#54C7BF] rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-700">Loss of motivation for activities you once enjoyed</p>
-                </div>
-                
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-[#54C7BF] rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-700">Decreased physical performance or endurance</p>
-                </div>
-                
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-[#54C7BF] rounded-full mt-2 flex-shrink-0"></div>
-                  <p className="text-gray-700">Concerns about aging and health maintenance</p>
-                </div>
+      <section ref={approachRef} className="py-20 bg-gradient-to-r from-secondary/20 to-primary/15">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl font-bold mb-8">When to Seek Help</h2>
+            <ul className="space-y-4">
+              {[
+                "Changes in sexual function or desire",
+                "Persistent fatigue or low energy",
+                "Difficulty maintaining physical fitness",
+                "Concerns about fertility or reproductive health",
+                "Relationship issues related to physical intimacy",
+                "Any physical symptoms affecting quality of life",
+
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <HeartHandshakeIcon className="text-teal-500"/>
+                  <span className="text-gray-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <img src={our_approach} alt="" className="rounded-2xl shadow-xl w-full" />
+          </div>
+        </div>
+      </section>
+
+
+      {/* Treatment Options */}
+      <section ref={helpRef} className="py-20">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <img src={seek_for_help} alt="" className="rounded-2xl shadow-xl w-full" />
+          </div>
+          <div>
+            <h2 className="text-4xl font-bold mb-8">Treatment Options</h2>
+            <ul className="space-y-4">
+              {[
+                "Medical evaluation and treatment",
+                "Counseling and therapy",
+                "Lifestyle modification programs",
+                "Partner therapy sessions",
+                "Ongoing monitoring and support",
+
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <HeartHandshakeIcon className="text-teal-500"/>
+                  <span className="text-gray-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Getting Started CTA */}
+      <section
+        ref={startedRef}
+        className="py-20 px-6"
+        style={{ background: "linear-gradient(to top, #f0fdfd, white)" }}
+      >
+        <div className="mx-auto">
+          <div className="relative rounded-3xl overflow-hidden h-[480px] flex items-center">
+            <img src={getting_started} alt="" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+            <div className="relative z-10 max-w-lg px-8">
+              <h2 className="text-4xl font-bold text-white mb-4">Getting Started</h2>
+              <p className="text-white/90 mb-4">
+              Your physical wellness journey begins with a comprehensive, confidential assessment. We discuss your health history, current concerns, and goals to create a personalized treatment plan.
+              </p>
+              <h3 className="text-gray-300 mb-8">
+              Your physical health is the foundation of your overall well being.
+              </h3>
+              <div className="flex flex-row gap-4">
+                <Button className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-full">
+                Book Confidential Consultation
+                </Button>
+                <Button variant="destructive" className="bg-blue-600 hover:bg-red-700 text-white px-6 py-3 rounded-full">
+                Learn About Our Specialists
+                </Button>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Getting Started */}
-      <section ref={startedRef} className="py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Getting Started
-          </h2>
-          <p className="text-xl text-white/90 mb-8 leading-relaxed">
-            Take the first step towards optimal physical health. Our comprehensive assessment will help us understand your unique needs and create a personalized wellness plan that fits your lifestyle and goals.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-[#54C7BF] hover:bg-[#54C7BF]/90 text-black font-semibold px-8 py-3 text-lg">
-              Book Physical Health Consultation →
-            </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black px-8 py-3 text-lg">
-              Download Health Assessment
-            </Button>
-          </div>
-        </div>
-        
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/lovable-uploads/01810712-5a05-465f-bb44-880cdceb9990.png" 
-            alt="Getting Started Background" 
-            className="w-full h-full object-cover opacity-40"
-          />
-        </div>
-      </section>
+      
     </div>
   );
 };

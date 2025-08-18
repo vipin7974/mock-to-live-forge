@@ -45,10 +45,21 @@ const Header = () => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="flex items-center space-x-1 text-gray-700 hover:text-primary transition-colors font-medium">
-                  <span>Services</span>
-                  <ChevronDown className="w-4 h-4" />
-                </button>
+               <div className="flex items-center justify-between w-full">
+  <Link
+    to="/services"
+    className="text-gray-700 hover:text-primary transition-colors font-medium"
+  >
+    Services
+  </Link>
+  <button onClick={() => setIsServicesOpen(!isServicesOpen)}>
+    <ChevronDown
+      className={`w-4 h-4 transition-transform ${
+        isServicesOpen ? "rotate-180" : ""
+      }`}
+    />
+  </button>
+</div>
 
                 {isServicesOpen && (
                   <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50">
@@ -71,10 +82,10 @@ const Header = () => {
                       Intimate Health
                     </Link>
                     <Link
-                      to="#"
+                      to="/dadWellness"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
                     >
-                      Self Development
+                      Dad's Wellness
                     </Link>
                   </div>
                 )}

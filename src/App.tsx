@@ -14,6 +14,7 @@ import MentalWellness from "./pages/MentalWellness";
 import PhysicalWellness from "./pages/PhysicalWellness";
 import IntimateWellness from "./pages/IntimateWellness";
 import NotFound from "./pages/NotFound";
+import DadWellness from "./pages/DadWellness";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/mentalWellness" element={<MentalWellness />} />
             <Route path="/physicalWellness" element={<PhysicalWellness />} />
             <Route path="/intimateWellness" element={<IntimateWellness />} />
+            <Route path="/dadWellness" element={<DadWellness />} />
           </Route>
 
           {/* Catch-all */}

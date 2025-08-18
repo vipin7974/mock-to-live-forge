@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import heroImage from "@/assets/hero_img.png"; // Ensure this is the smiling man image
+import heroImage from "@/assets/home_hero_bg.jpg"; // Ensure this is the smiling man image
 import TealGlow from "./ui/tealglow";
 
 const HeroSection = () => {

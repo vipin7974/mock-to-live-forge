@@ -124,8 +124,10 @@ const OurStory = () => {
       </section>
 
       {/* The Journey Ahead */}
-      <section className="relative m-12 m-auto mb-10 rounded-3xl overflow-hidden max-h-[480px] h-[480px] flex items-center">
+      <section className="relative w-full py-20 px-4">
   {/* Background image */}
+  <div className="max-w-5/6 mx-auto ">
+  <div className="relative rounded-3xl overflow-hidden shadow-lg overflow-hidden max-h-[480px] h-[480px] flex items-center">
   <img
     src={journey_ahead}
     alt="Wellness Background"
@@ -159,6 +161,8 @@ const OurStory = () => {
         </button>
       </div>
     </div>
+  </div>
+  </div>
   </div>
 </section>
 
