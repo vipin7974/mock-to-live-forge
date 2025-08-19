@@ -20,7 +20,7 @@ const cards = [
   {
     id: 2,
     title: "Dr. Apoorv Gupta",
-    subtitle: "Dr. Apoorv Gupta",
+    subtitle: "General & Laparoscopic Surgeon",
     description:
       "Dr. Apoorv Gupta is a leading surgeon proficient in both conventional and minimally invasive procedures, addressing everything from abdominal to critical surgical needs. He is also dedicated to medical education and ongoing research.Be Ballsy leverages Dr. Gupta’s skills to ensure prompt, expert surgical advice and support for individuals seeking trusted information or referrals for physical health concerns.",
     image: dr_apoorve_gupta,

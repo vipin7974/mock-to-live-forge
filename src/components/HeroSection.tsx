@@ -2,9 +2,12 @@ import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import heroImage from "@/assets/home_hero_bg.jpg"; // Ensure this is the smiling man image
 import TealGlow from "./ui/tealglow";
+import { useState } from "react";
+import ConsultationModal from "./ui/ConsultationModal";
 
 const HeroSection = () => {
   const heroContentRef = useScrollAnimation('animate-fade-in');
+  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
 
   return (
     <section
@@ -31,8 +34,11 @@ const HeroSection = () => {
               <Button size="lg" className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 text-lg rounded-full font-semibold">
                 Get Started
               </Button>
-              <Button variant="outline" size="lg" className="border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white px-8 py-4 text-lg rounded-full font-semibold transition-all duration-300">
-                Book a Free Consultation
+              <Button 
+                size="lg" className="bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 text-lg rounded-full font-semibold"
+                onClick={() => setIsConsultationModalOpen(true)}
+              >
+                Book Consultation
               </Button>
             </div>
             <p className="text-sm text-gray-300 flex items-center justify-center lg:justify-start gap-1">
@@ -41,6 +47,10 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+      <ConsultationModal
+        isOpen={isConsultationModalOpen} 
+        onClose={() => setIsConsultationModalOpen(false)} 
+      />
     </section>
   );
 };
