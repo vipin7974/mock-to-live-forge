@@ -9,7 +9,7 @@ import { Calendar, Clock, Phone, Mail } from 'lucide-react';
 
 interface ConsultationModalProps {
   isOpen: boolean;
-  onClose: () => void;
+  onClose: () => void;  
 }
 
 const ConsultationModal = ({ isOpen, onClose }: ConsultationModalProps) => {
