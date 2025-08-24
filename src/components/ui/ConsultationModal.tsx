@@ -33,7 +33,7 @@ const ConsultationModal = ({ isOpen, onClose }: ConsultationModalProps) => {
       ...prev,
       consultationMode: value,
       phoneNumber: '',
-      email: ''
+      email: '',
     }));
   };
 
