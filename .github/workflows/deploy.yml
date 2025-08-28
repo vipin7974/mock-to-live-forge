@@ -25,7 +25,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to Hostinger via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -33,3 +33,5 @@ jobs:
           server-dir: ${{ secrets.FTP_PATH }}
           local-dir: dist
           method: ftp
+          dangerous-clean-slate: true
+
