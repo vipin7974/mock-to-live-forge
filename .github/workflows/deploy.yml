@@ -30,8 +30,8 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_PATH }}
           local-dir: dist/
+          server-dir: domains/beballsy.in/public_html/
           method: ftp
           dangerous-clean-slate: true
 
